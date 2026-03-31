@@ -31,11 +31,6 @@ Deferred Rendering 파이프라인에 통합된 그림자 시스템을 구현했
 광원 시점의 뷰/프로젝션 행렬로 씬을 렌더링해 뎁스맵을 생성하고,
 이후 패스에서 픽셀이 그림자 안에 있는지 비교해 그림자를 적용합니다.
 
-텍스처 포맷으로 `DXGI_FORMAT_R24G8_TYPELESS`를 사용해
-같은 텍스처를 DSV(`DXGI_FORMAT_D24_UNORM_S8_UINT`)와 SRV(`DXGI_FORMAT_R24_UNORM_X8_TYPELESS`)로
-동시에 바인딩할 수 있도록 했습니다.
-이를 통해 뎁스맵 생성과 샘플링을 별도 복사 없이 처리합니다.
-
 **스키닝 지원**
 
 캐릭터처럼 본 애니메이션이 있는 메시는 별도의 버텍스 셰이더(`DeferredShadowDepthVS.hlsl`)를 사용합니다.
